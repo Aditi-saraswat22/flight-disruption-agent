@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://flight-disruption-agent.onrender.com/api/:path*"
+    }
+  ]
+}
