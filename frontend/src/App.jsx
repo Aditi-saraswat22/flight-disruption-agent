@@ -6,7 +6,8 @@ import SummaryCards from './components/SummaryCards';
 import PassengerTable from './components/PassengerTable';
 import PassengerDetail from './components/PassengerDetail';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
+
 
 export default function App() {
   const [simulationData, setSimulationData] = useState(null);
