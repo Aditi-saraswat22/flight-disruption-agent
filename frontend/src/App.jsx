@@ -6,8 +6,7 @@ import SummaryCards from './components/SummaryCards';
 import PassengerTable from './components/PassengerTable';
 import PassengerDetail from './components/PassengerDetail';
 
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
-
+const API_BASE = import.meta.env.VITE_API_URL || 'https://flight-disruption-agent.onrender.com/api';
 
 export default function App() {
   const [simulationData, setSimulationData] = useState(null);
@@ -49,19 +48,34 @@ export default function App() {
     }
   };
 
-  const runSimulation = async (payload) => {
+  const runSimulation = async (payload, retries = 3) => {
     setLoading(true);
     setError(null);
-    try {
-      const res = await axios.post(`${API_BASE}/simulate-disruption`, payload);
-      setSimulationData(res.data);
-    } catch (err) {
-      console.error('Simulation error:', err);
-      setError(err.response?.data?.detail || 'Failed to communicate with agent backend server.');
-    } finally {
-      setLoading(false);
+
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+        const res = await axios.post(`${API_BASE}/simulate-disruption`, payload);
+        setSimulationData(res.data);
+        setError(null);
+        setLoading(false);
+        return;
+      } catch (err) {
+        console.warn(`Simulation attempt ${attempt} failed:`, err);
+        if (attempt < retries) {
+          setError(`Backend warming up (attempt ${attempt}/${retries})... Please wait.`);
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+        } else {
+          setError(
+            typeof err.response?.data?.detail === 'string'
+              ? err.response.data.detail
+              : 'Failed to connect to agent backend server. Please click Retry Connection below.'
+          );
+        }
+      }
     }
+    setLoading(false);
   };
+
 
   return (
     <div className="min-h-screen text-slate-100 flex flex-col font-sans">
