@@ -1,0 +1,112 @@
+{
+  "disrupted_flight": {
+    "flight_number": "6E-204",
+    "origin": "DEL (Indira Gandhi International, Delhi)",
+    "destination": "BOM (Chhatrapati Shivaji Maharaj International, Mumbai)",
+    "scheduled_departure": "2026-09-19T11:00:00",
+    "scheduled_arrival": "2026-09-19T13:15:00",
+    "aircraft": "Airbus A321neo",
+    "total_passengers": 18
+  },
+  "alternative_flights": [
+    {
+      "flight_number": "6E-208",
+      "airline": "IndiGo",
+      "origin": "DEL",
+      "destination": "BOM",
+      "departure_time": "2026-09-19T14:30:00",
+      "arrival_time": "2026-09-19T16:45:00",
+      "available_seats": 24,
+      "cabin_classes": ["Business", "Premium Economy", "Economy"],
+      "type": "Direct"
+    },
+    {
+      "flight_number": "6E-212",
+      "airline": "IndiGo",
+      "origin": "DEL",
+      "destination": "BOM",
+      "departure_time": "2026-09-19T16:15:00",
+      "arrival_time": "2026-09-19T18:30:00",
+      "available_seats": 42,
+      "cabin_classes": ["Economy"],
+      "type": "Direct"
+    },
+    {
+      "flight_number": "6E-220",
+      "airline": "IndiGo",
+      "origin": "DEL",
+      "destination": "BOM",
+      "departure_time": "2026-09-19T19:00:00",
+      "arrival_time": "2026-09-19T21:15:00",
+      "available_seats": 15,
+      "cabin_classes": ["Business", "Economy"],
+      "type": "Direct"
+    },
+    {
+      "flight_number": "6E-883",
+      "airline": "IndiGo",
+      "origin": "BOM",
+      "destination": "DXB",
+      "departure_time": "2026-09-19T17:30:00",
+      "arrival_time": "2026-09-19T19:45:00",
+      "available_seats": 12,
+      "cabin_classes": ["Economy"],
+      "type": "Connecting Option for Dubai"
+    },
+    {
+      "flight_number": "6E-514",
+      "airline": "IndiGo",
+      "origin": "BOM",
+      "destination": "LHR",
+      "departure_time": "2026-09-19T18:00:00",
+      "arrival_time": "2026-09-20T00:30:00",
+      "available_seats": 8,
+      "cabin_classes": ["Business", "Economy"],
+      "type": "Connecting Option for London"
+    },
+    {
+      "flight_number": "6E-311",
+      "airline": "IndiGo",
+      "origin": "BOM",
+      "destination": "SIN",
+      "departure_time": "2026-09-19T19:30:00",
+      "arrival_time": "2026-09-20T03:45:00",
+      "available_seats": 18,
+      "cabin_classes": ["Premium Economy", "Economy"],
+      "type": "Connecting Option for Singapore"
+    },
+    {
+      "flight_number": "6E-108",
+      "airline": "IndiGo",
+      "origin": "BOM",
+      "destination": "BLR",
+      "departure_time": "2026-09-19T17:00:00",
+      "arrival_time": "2026-09-19T18:45:00",
+      "available_seats": 30,
+      "cabin_classes": ["Economy"],
+      "type": "Connecting Option for Bengaluru"
+    },
+    {
+      "flight_number": "AI-502",
+      "airline": "Air India (Partner)",
+      "origin": "DEL",
+      "destination": "BOM",
+      "departure_time": "2026-09-19T13:45:00",
+      "arrival_time": "2026-09-19T16:00:00",
+      "available_seats": 6,
+      "cabin_classes": ["Business", "Economy"],
+      "type": "Partner Direct"
+    },
+    {
+      "flight_number": "UK-981",
+      "airline": "Vistara (Partner)",
+      "origin": "DEL",
+      "destination": "BOM",
+      "departure_time": "2026-09-19T15:00:00",
+      "arrival_time": "2026-09-19T17:15:00",
+      "available_seats": 10,
+      "cabin_classes": ["Business", "Premium Economy", "Economy"],
+      "type": "Partner Direct"
+    }
+  ]
+}
